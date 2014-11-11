@@ -17,15 +17,15 @@ include RDF
 RDF::Writer.open("./result/dbtss_tss.nt") do |writer|
 client= Mysql.connect('localhost', 'root', 'mysql', 'mysql')
 client.query("select * from tss_bincount_9606_chr18_LC2ad limit 1").each do |col1,col2,col3,col4,col5,col6,col7,col8,col9|
-print col1,",",col2,",",col3,",",col4,",",col5,",",col6,",",col7,",",col8,",",col9,"\n" 
+#print col1,",",col2,",",col3,",",col4,",",col5,",",col6,",",col7,",",col8,",",col9,"\n" 
 
 
   #########################################################
-  #   TSS Convert
+  #  TSS Convert
   #########################################################
 
     #########################################################
-    #    PREFIX
+    #  define PREFIX
     #########################################################
     dbtss = RDF::Vocabulary.new("http://dbtss.hgc.jp/rdf/")
     tsso = RDF::Vocabulary.new("http://dbtss.hgc.jp/ontology/")
@@ -42,7 +42,7 @@ print col1,",",col2,",",col3,",",col4,",",col5,",",col6,",",col7,",",col8,",",co
  #   ut = RDF::Vocabulary.new("http://utprot.net/")
 
     #########################################################
-    #   constraction of RDF model 『RDFTSS』 
+    #  constraction of RDF model
     #########################################################
 	gversion = "hg19"
 	tss_ver = "9.0"
@@ -57,14 +57,12 @@ print col1,",",col2,",",col3,",",col4,",",col5,",",col6,",",col7,",",col8,",",co
 	dbtss_resouce = dbtss.to_s + gversion + "-" + col3.to_s + ":" + col4.to_s + ":" + strand.to_s  + "::"
 	dbtss_uri = RDF::URI.new(dbtss_resouce)
 
-	print dbtss_uri + "\n"
+#	print dbtss_uri + "\n"
 
 	dbtss_tss = dbtss.to_s + gversion + "-" + col3.to_s + ":" + col4.to_s + ":" + strand.to_s  + "::" + "/" + tss_ver.to_s + "/" + tissue.to_s + "/" + col1
 	dbtss_tss_uri =  RDF::URI.new(dbtss_tss)
 
-	print dbtss_tss + "\n"
-
-#uri = RDF::URI.new("http://rdf.rubyforge.org/")
+#	print dbtss_tss + "\n"
 
 #RDF::Writer.open("./result/dbtss_tss.nt") do |writer|
   writer << RDF::Graph.new do |graph|
