@@ -16,7 +16,7 @@ include RDF
 
 RDF::Writer.open("./result/dbtss_tss.nt") do |writer|
 client= Mysql.connect('localhost', 'root', 'mysql', 'mysql')
-client.query("select * from tss_bincount_9606_chr18_LC2ad limit 1").each do |col1,col2,col3,col4,col5,col6,col7,col8,col9|
+client.query("select * from tss_bincount_9606_chr18_LC2ad").each do |col1,col2,col3,col4,col5,col6,col7,col8,col9|
 #print col1,",",col2,",",col3,",",col4,",",col5,",",col6,",",col7,",",col8,",",col9,"\n" 
 
 
@@ -46,7 +46,7 @@ client.query("select * from tss_bincount_9606_chr18_LC2ad limit 1").each do |col
     #########################################################
 	gversion = "hg19"
 	tss_ver = "9.0"
-	tissue = "lc2ad"
+	tissue = "LC2ad"
 
 	if /F/ =~ col5
 	  strand = "+"
@@ -64,7 +64,6 @@ client.query("select * from tss_bincount_9606_chr18_LC2ad limit 1").each do |col
 
 #	print dbtss_tss + "\n"
 
-#RDF::Writer.open("./result/dbtss_tss.nt") do |writer|
   writer << RDF::Graph.new do |graph|
  
     # TSS Position
@@ -74,7 +73,7 @@ client.query("select * from tss_bincount_9606_chr18_LC2ad limit 1").each do |col
     bnode1 = RDF::Node.new(bnode1)
 
     graph.insert([dbtss_uri, faldo.location, bnode1])
-    graph.insert([bnode1, rdf.type, faldo.ExactPosision])
+    graph.insert([bnode1, rdf.type, faldo.ExactPosition])
     graph.insert([bnode1, faldo.begin, col4])
     graph.insert([bnode1, faldo.end, col4])
 
