@@ -16,9 +16,8 @@ include RDF
 
 RDF::Writer.open("./result/dbtss_tss.nt") do |writer|
 client= Mysql.connect('localhost', 'root', 'mysql', 'mysql')
-client.query("select * from tss_bincount_9606_chr18_LC2ad").each do |col1,col2,col3,col4,col5,col6,col7,col8,col9|
+client.query("select * from tss_bincount_9606_chr18_LC2ad limit 1").each do |col1,col2,col3,col4,col5,col6,col7,col8,col9|
 #print col1,",",col2,",",col3,",",col4,",",col5,",",col6,",",col7,",",col8,",",col9,"\n" 
-
 
   #########################################################
   #  TSS Convert
@@ -39,12 +38,13 @@ client.query("select * from tss_bincount_9606_chr18_LC2ad").each do |col1,col2,c
     faldo = RDF::Vocabulary.new("http://biohackathon.org/resource/faldo#")
     obo = RDF::Vocabulary.new("http://purl.obolibrary.org/obo/")
     efo = RDF::Vocabulary.new("http://www.ebi.ac.uk/efo/")
+    tmo = RDF::Vocabulary.new("http://www.w3.org/2001/sw/hcls/ns/transmed/")
  #   ut = RDF::Vocabulary.new("http://utprot.net/")
 
     #########################################################
     #  constraction of RDF model
     #########################################################
-	gversion = "hg19"
+	gversion = "hg38"
 	tss_ver = "9.0"
 	tissue = "LC2ad"
 
@@ -59,7 +59,7 @@ client.query("select * from tss_bincount_9606_chr18_LC2ad").each do |col1,col2,c
 
 #	print dbtss_uri + "\n"
 
-	dbtss_tss = dbtss.to_s + gversion + "-" + col3.to_s + ":" + col4.to_s + ":" + strand.to_s  + "::" + "/" + tss_ver.to_s + "/" + tissue.to_s + "/" + col1
+	dbtss_tss = dbtss.to_s + tss_ver + "/" + tissue.to_s + "/" + col1.to_s + "/" + gversion + "-" + col3.to_s + ":" + col4.to_s + ":" + strand.to_s  + "::" 
 	dbtss_tss_uri =  RDF::URI.new(dbtss_tss)
 
 #	print dbtss_tss + "\n"
@@ -83,7 +83,7 @@ client.query("select * from tss_bincount_9606_chr18_LC2ad").each do |col1,col2,c
     graph.insert([bnode1, faldo.reference, bnode2])
 
     graph.insert([bnode2, RDF::DC.identifier, col3])
-    graph.insert([bnode2, obo.RO_0002162, idorg.taxonomy/9606])
+#    graph.insert([bnode2, obo.RO_0002162, idorg.taxonomy/9606])
     graph.insert([bnode2, tsso.assembly, gversion])
  
 
