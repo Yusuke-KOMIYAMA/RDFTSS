@@ -44,6 +44,7 @@ client.query("select * from tss_bincount_9606_chr18_LC2ad limit 1").each do |col
     ncit = RDF::Vocabulary.new("http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#")
     owl = RDF::Vocabulary.new("http://www.w3.org/2002/07/owl#")
     sio = RDF::Vocabulary.new("http://semanticscience.org/resource/")
+    ddbj = RDF::Vocabulary.new("http://ddbj.nig.ac.jp/ontologies/nucleotide/")
  #   ut = RDF::Vocabulary.new("http://utprot.net/")
 
     #########################################################
@@ -87,11 +88,28 @@ client.query("select * from tss_bincount_9606_chr18_LC2ad limit 1").each do |col
 
     graph.insert([bnode1, faldo.reference, bnode2])
 
-    graph.insert([bnode2, dcterms.identifier, col3])
-#    graph.insert([bnode2, obo.RO_0002162, idorg.taxonomy/9606])
-    graph.insert([bnode2, tsso.assembly, gversion])
- 
+#=begin
+    bnode6 = RDF::Node.uuid.to_s.insert(0,"dbtss_taxon").delete("-").delete("_:")
+    bnode6 = RDF::Node.new(bnode6)
+    graph.insert([bnode2, dcterms.identifier, bnode6])
+    graph.insert([bnode2, rdf.type, tsso.TSS_Position])
+    	graph.insert([bnode6, rdf.type, obo.RO_0002162])
+    	graph.insert([bnode6, edam.has_identifier, idorg.taxonomy/9606])
 
+    bnode7 = RDF::Node.uuid.to_s.insert(0,"dbtss_chr").delete("-").delete("_:")
+    bnode7 = RDF::Node.new(bnode7)
+    graph.insert([bnode2, dcterms.identifier, bnode7])
+    	graph.insert([bnode7, rdf.type, edam.topic_3176])
+    	graph.insert([bnode7, ddbj.chromosome, col3])
+
+    bnode8 = RDF::Node.uuid.to_s.insert(0,"dbtss_assembly").delete("-").delete("_:")
+    bnode8 = RDF::Node.new(bnode8)
+    graph.insert([bnode2, dcterms.identifier, bnode8])
+    	graph.insert([bnode8, rdf.type, edam.data_2041])
+    	graph.insert([bnode8, dcterms.hasVersion, gversion])
+
+
+# =end
 #=begin
     # TSS gene
     bnode3 = RDF::Node.uuid.to_s.insert(0,"dbtss_ver").delete("-").delete("_:")
@@ -100,6 +118,9 @@ client.query("select * from tss_bincount_9606_chr18_LC2ad limit 1").each do |col
     bnode4 = RDF::Node.new(bnode4)
     bnode5 = RDF::Node.uuid.to_s.insert(0,"dbtss_cnt").delete("-").delete("_:")
     bnode5 = RDF::Node.new(bnode5)
+    bnode9 = RDF::Node.uuid.to_s.insert(0,"dbtss_src").delete("-").delete("_:")
+    bnode9 = RDF::Node.new(bnode9)
+
 
     graph.insert([dbtss_tss_uri, rdf.type, obo.SO_0000315])
     graph.insert([dbtss_tss_uri, dcterms.hasVersion, bnode3])
@@ -111,7 +132,10 @@ client.query("select * from tss_bincount_9606_chr18_LC2ad limit 1").each do |col
     graph.insert([dbtss_tss_uri, owl.hasValue, bnode5])
 	graph.insert([bnode5, rdf.type, sio.SIO_000794])
     	graph.insert([bnode5, rdfs.label, col6])
-    graph.insert([dbtss_tss_uri, dcterms.source, efo.EFO_0003140])
+    graph.insert([dbtss_tss_uri, dcterms.indentifier, bnode9])
+    	graph.insert([bnode9, rdf.type, edam.tissue_type])
+    	graph.insert([bnode9, dcterms.source, efo.EFO_0003140])
+
 
     graph.insert([dbtss_tss_uri, faldo.location, dbtss_uri])
 #=end

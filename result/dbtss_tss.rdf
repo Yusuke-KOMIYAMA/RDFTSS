@@ -4,60 +4,90 @@
     <rdf:type rdf:resource="http://biohackathon.org/resource/faldo#Region"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://dbtss.hgc.jp/rdf/hg38-chr18:111904:+::">
-    <ns0:location xmlns:ns0="http://biohackathon.org/resource/faldo#" rdf:nodeID="exactposcb0773204ca30132504a38e8562e1edc"/>
+    <ns0:location xmlns:ns0="http://biohackathon.org/resource/faldo#" rdf:nodeID="exactpos474daa504d200132507238e8562e1edc"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="exactposcb0773204ca30132504a38e8562e1edc">
+  <rdf:Description rdf:nodeID="exactpos474daa504d200132507238e8562e1edc">
     <rdf:type rdf:resource="http://biohackathon.org/resource/faldo#ExactPosition"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="exactposcb0773204ca30132504a38e8562e1edc">
+  <rdf:Description rdf:nodeID="exactpos474daa504d200132507238e8562e1edc">
     <ns0:begin xmlns:ns0="http://biohackathon.org/resource/faldo#">111904</ns0:begin>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="exactposcb0773204ca30132504a38e8562e1edc">
+  <rdf:Description rdf:nodeID="exactpos474daa504d200132507238e8562e1edc">
     <ns0:end xmlns:ns0="http://biohackathon.org/resource/faldo#">111904</ns0:end>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="exactposcb0773204ca30132504a38e8562e1edc">
-    <ns0:reference xmlns:ns0="http://biohackathon.org/resource/faldo#" rdf:nodeID="tssposcb0891f04ca30132504a38e8562e1edc"/>
+  <rdf:Description rdf:nodeID="exactpos474daa504d200132507238e8562e1edc">
+    <ns0:reference xmlns:ns0="http://biohackathon.org/resource/faldo#" rdf:nodeID="tsspos474f18f04d200132507238e8562e1edc"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="tssposcb0891f04ca30132504a38e8562e1edc">
-    <ns0:identifier xmlns:ns0="http://purl.org/dc/terms/">chr18</ns0:identifier>
+  <rdf:Description rdf:nodeID="tsspos474f18f04d200132507238e8562e1edc">
+    <ns0:identifier xmlns:ns0="http://purl.org/dc/terms/" rdf:nodeID="dbtsstaxon474f1c604d200132507238e8562e1edc"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="tssposcb0891f04ca30132504a38e8562e1edc">
-    <ns0:assembly xmlns:ns0="http://dbtss.hgc.jp/ontology/">hg38</ns0:assembly>
+  <rdf:Description rdf:nodeID="tsspos474f18f04d200132507238e8562e1edc">
+    <ns0:identifier xmlns:ns0="http://purl.org/dc/terms/" rdf:nodeID="dbtsschr474f29004d200132507238e8562e1edc"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="tsspos474f18f04d200132507238e8562e1edc">
+    <ns0:identifier xmlns:ns0="http://purl.org/dc/terms/" rdf:nodeID="dbtssassembly474f89604d200132507238e8562e1edc"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="tsspos474f18f04d200132507238e8562e1edc">
+    <rdf:type rdf:resource="http://dbtss.hgc.jp/ontology/TSS_Position"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="dbtsstaxon474f1c604d200132507238e8562e1edc">
+    <rdf:type rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="dbtsstaxon474f1c604d200132507238e8562e1edc">
+    <ns0:has_identifier xmlns:ns0="http://edamontology.org/" rdf:resource="http://info.identifiers.org/taxonomy/9606"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="dbtsschr474f29004d200132507238e8562e1edc">
+    <rdf:type rdf:resource="http://edamontology.org/topic_3176"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="dbtsschr474f29004d200132507238e8562e1edc">
+    <ns0:chromosome xmlns:ns0="http://ddbj.nig.ac.jp/ontologies/nucleotide/">chr18</ns0:chromosome>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="dbtssassembly474f89604d200132507238e8562e1edc">
+    <rdf:type rdf:resource="http://edamontology.org/data_2041"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="dbtssassembly474f89604d200132507238e8562e1edc">
+    <ns0:hasVersion xmlns:ns0="http://purl.org/dc/terms/">hg38</ns0:hasVersion>
   </rdf:Description>
   <rdf:Description rdf:about="http://dbtss.hgc.jp/rdf/9.0/LC2ad/1/hg38-chr18:111904:+::">
     <rdf:type rdf:resource="http://purl.obolibrary.org/obo/SO_0000315"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://dbtss.hgc.jp/rdf/9.0/LC2ad/1/hg38-chr18:111904:+::">
-    <ns0:hasVersion xmlns:ns0="http://purl.org/dc/terms/" rdf:nodeID="dbtssvercb0898304ca30132504a38e8562e1edc"/>
+    <ns0:hasVersion xmlns:ns0="http://purl.org/dc/terms/" rdf:nodeID="dbtssver474f8f104d200132507238e8562e1edc"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://dbtss.hgc.jp/rdf/9.0/LC2ad/1/hg38-chr18:111904:+::">
-    <ns0:hasValue xmlns:ns0="http://www.w3.org/2002/07/owl#" rdf:nodeID="dbtssrepcb0899604ca30132504a38e8562e1edc"/>
+    <ns0:hasValue xmlns:ns0="http://www.w3.org/2002/07/owl#" rdf:nodeID="dbtssrep474f90a04d200132507238e8562e1edc"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://dbtss.hgc.jp/rdf/9.0/LC2ad/1/hg38-chr18:111904:+::">
-    <ns0:hasValue xmlns:ns0="http://www.w3.org/2002/07/owl#" rdf:nodeID="dbtsscntcb089a604ca30132504a38e8562e1edc"/>
+    <ns0:hasValue xmlns:ns0="http://www.w3.org/2002/07/owl#" rdf:nodeID="dbtsscnt474f91704d200132507238e8562e1edc"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://dbtss.hgc.jp/rdf/9.0/LC2ad/1/hg38-chr18:111904:+::">
-    <ns0:source xmlns:ns0="http://purl.org/dc/terms/" rdf:resource="http://www.ebi.ac.uk/efo/EFO_0003140"/>
+    <ns0:indentifier xmlns:ns0="http://purl.org/dc/terms/" rdf:nodeID="dbtsssrc474f92604d200132507238e8562e1edc"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://dbtss.hgc.jp/rdf/9.0/LC2ad/1/hg38-chr18:111904:+::">
     <ns0:location xmlns:ns0="http://biohackathon.org/resource/faldo#" rdf:resource="http://dbtss.hgc.jp/rdf/hg38-chr18:111904:+::"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="dbtssvercb0898304ca30132504a38e8562e1edc">
+  <rdf:Description rdf:nodeID="dbtssver474f8f104d200132507238e8562e1edc">
     <rdf:type rdf:resource="http://edamontology.org/data_1670"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="dbtssvercb0898304ca30132504a38e8562e1edc">
+  <rdf:Description rdf:nodeID="dbtssver474f8f104d200132507238e8562e1edc">
     <ns0:label xmlns:ns0="http://www.w3.org/TR/rdf-schema/#">9.0</ns0:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="dbtssrepcb0899604ca30132504a38e8562e1edc">
+  <rdf:Description rdf:nodeID="dbtssrep474f90a04d200132507238e8562e1edc">
     <rdf:type rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C67045"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="dbtssrepcb0899604ca30132504a38e8562e1edc">
+  <rdf:Description rdf:nodeID="dbtssrep474f90a04d200132507238e8562e1edc">
     <ns0:label xmlns:ns0="http://www.w3.org/TR/rdf-schema/#">1</ns0:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="dbtsscntcb089a604ca30132504a38e8562e1edc">
+  <rdf:Description rdf:nodeID="dbtsscnt474f91704d200132507238e8562e1edc">
     <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000794"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="dbtsscntcb089a604ca30132504a38e8562e1edc">
+  <rdf:Description rdf:nodeID="dbtsscnt474f91704d200132507238e8562e1edc">
     <ns0:label xmlns:ns0="http://www.w3.org/TR/rdf-schema/#">1</ns0:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="dbtsssrc474f92604d200132507238e8562e1edc">
+    <rdf:type rdf:resource="http://edamontology.org/tissue_type"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="dbtsssrc474f92604d200132507238e8562e1edc">
+    <ns0:source xmlns:ns0="http://purl.org/dc/terms/" rdf:resource="http://www.ebi.ac.uk/efo/EFO_0003140"/>
   </rdf:Description>
 </rdf:RDF>
